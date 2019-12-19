@@ -18,7 +18,8 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-//    private UserDetails userDetails;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private UserDetails userDetails;
 
 //    private Stash stash;
 
@@ -56,5 +57,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public UserDetails getUserDetails() {
+        return userDetails;
+    }
+
+    public void setUserDetails(UserDetails userDetails) {
+        this.userDetails = userDetails;
     }
 }
