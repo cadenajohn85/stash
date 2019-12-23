@@ -9,6 +9,10 @@ public class Cut {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @ManyToOne
+    @JoinColumn(name = "stash_id")
+    private Stash stash;
+
     @Column(nullable = false)
     private String fabricName;
 
@@ -27,6 +31,7 @@ public class Cut {
     @Column(length = 100)
     private String designer;
 
+    //stash_id
     //type (yardage, fat quarter, layer cake, charm pack, jelly roll,
     //image (optional)
 
@@ -39,6 +44,14 @@ public class Cut {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Stash getStash() {
+        return stash;
+    }
+
+    public void setStash(Stash stash) {
+        this.stash = stash;
     }
 
     public String getFabricName() {

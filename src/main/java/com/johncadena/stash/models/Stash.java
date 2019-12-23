@@ -18,7 +18,7 @@ public class Stash {
         // One to many: stash to cuts
     // Many to many: stashes to projects
 
-    @OneToMany(mappedBy = "fabricName")
+    @OneToMany(mappedBy = "stash")
     private List<Cut> cuts;
 
     public Stash() {
